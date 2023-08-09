@@ -77,3 +77,58 @@ body{
     font-weight: 600;
     display: none;
 }
+
+/* dodao Aca css za coveculjka (pozicija, z index, velicina) */
+
+.coveculjak{
+    display: flex;
+    position: absolute;
+    left: 250px;
+}
+#vesalo{
+    position: absolute;
+    z-index: -1;
+    width: 60vh;
+    left: 330px ;
+    top: 102px;
+}
+#element1{
+    width: 10vh;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+}
+#element2{
+    position: absolute;
+    top: 310px;
+    left: 500px;
+    width: 10vh;
+}
+
+#element3{
+        position: absolute;
+    top: 430px;
+    left: 498px;
+    width: 5vh;
+
+}
+
+#element4{
+        position: absolute;
+    top: 430px;
+    left: 537.5px;
+    width: 5vh;
+}
+
+#element5{
+     position: absolute;
+    top: 310px;
+    left: 571px;
+    width: 5vh;
+}
+#element6{
+     position: absolute;
+    top: 310px;
+    left: 464px;
+    width: 5vh;
+}

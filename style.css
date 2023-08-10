@@ -132,3 +132,6 @@ body{
     left: 464px;
     width: 5vh;
 }
+.elem{
+    display: none;
+}

@@ -125,6 +125,9 @@ function checkLetter() {
       remainingAttempts--;
       let attempts = document.querySelector(".attempts");
       attempts.innerText = `Preostali pokusaji: ${remainingAttempts}/6`;
+      //ispis coveculjka
+      let elem = document.querySelector(`#element${remainingAttempts}`);
+      elem.style.display = "flex";
     } else {
       let chosenDiv = document.querySelector(".chosenOption");
       let alertText = document.createElement("p");
@@ -183,6 +186,12 @@ function reset() {
   flegWord = 0;
   flegLetters = 0;
   remainingAttempts = 6;
+  //brisanje coveculjka
+  let elem = document.querySelectorAll(".elem");
+  elem.forEach((img)=>{
+    img.style.display="none";
+  });
+
   let attempts = document.querySelector(".attempts");
   attempts.remove();
   let randomWord = document.querySelectorAll(".chosenLetter");

@@ -80,10 +80,19 @@ body{
 
 /* dodao Aca css za coveculjka (pozicija, z index, velicina) */
 
+
+.hangmanDiv{
+    position: relative;
+    left: 10vh;
+    top: 1vh;
+    /* border: solid 2px black; */
+    height: 100vh;
+    width: 80vh;
+}
 .coveculjak{
-    display: flex;
-    position: absolute;
-    left: 250px;
+    /* display: flex; */
+    /* position: relative; */
+    /* left: -150%; */
    
    
 }
@@ -91,46 +100,46 @@ body{
     position: absolute;
     z-index: -1;
     width: 60vh;
-    left: 330px ;
-    top: 102px;
+    left: 5vh ;
+    top: 5vh;
 }
 #element1{
     width: 10vh;
     position: absolute;
-    top: 200px;
-    left: 500px;
+    top: 18vh;
+    left: 28.7vh;
 }
 #element2{
     position: absolute;
-    top: 310px;
-    left: 500px;
+    top: 33vh;
+    left: 28.7vh;
     width: 10vh;
 }
 
 #element3{
         position: absolute;
-    top: 430px;
-    left: 498px;
+    top: 50vh;
+    left: 28.4vh;
     width: 5vh;
 
 }
 
 #element4{
         position: absolute;
-    top: 430px;
-    left: 537.5px;
+    top: 50vh;
+    left: 34vh;
     width: 5vh;
 }
 
 #element5{
      position: absolute;
-    top: 310px;
-    left: 571px;
+    top: 33vh;
+    left: 38.7vh;
     width: 5vh;
 }
 #element6{
      position: absolute;
-    top: 310px;
-    left: 464px;
+    top: 33vh;
+    left: 23.7vh;
     width: 5vh;
 }

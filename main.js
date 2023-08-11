@@ -2,6 +2,14 @@ const btns = document.querySelectorAll(".btn").forEach((btn) => {
   btn.addEventListener("click", renderLetters);
 });
 
+var nizKliknutihSlova = [];
+for (let i = 1; i<7; i++  ) {
+ var ID = "#element"+i; 
+ //var elementX =  document.querySelector();
+ console.log(ID);
+ document.querySelector(ID).style.display = "none";
+
+}
 let zivotinjeNiz = [
   "krava",
   "macka",
@@ -88,27 +96,63 @@ function renderWord(word) {
 function pickedLetter() {
   let letters = document.querySelectorAll(".letters").forEach((letter) => {
     letter.addEventListener("click", checkLetter);
-  });
-}
+  
+    });
+
+    document.addEventListener("keyup", (event) => { 
+      console.log(event.key);
+       if (!nizKliknutihSlova.includes(event.key)) {
+        nizKliknutihSlova.push(event.key); 
+        velikoSlovo = event.key.toUpperCase();
+        checkOnlyLetter(event.key);
+        var nizSlova =       document.querySelectorAll(".letters");
+
+        console.log(nizSlova);
+        nizSlova.forEach((element) => {if (element.innerText == velikoSlovo ) {
+          console.log(element);
+          element.style.opacity = "0.5"; 
+        }})
+        console.log(nizKliknutihSlova)
+
+  };
+})}
 
 let count = 0;
 
+
 function checkLetter() {
+
+  let array = [...randomOption];
   let pickedLetter = this;
-  if (winFlag ==0) {
   pickedLetter.style.opacity = "0.5";
+  let slovo =   pickedLetter.innerText.toLowerCase();
+  if (!nizKliknutihSlova.includes(slovo)) {
+  nizKliknutihSlova.push(slovo); 
+  checkOnlyLetter(slovo);
+}
+
+}
+
+function checkOnlyLetter(slovo){
+
+  let array = [...randomOption];
+ 
+  if (winFlag ==0) {
+ 
   // nodeLetter.disabled = true;
   let letters = document.querySelectorAll(".chosenLetter");
-  let array = [...randomOption];
+  
   let arrayCorect = [];
-  let indexOf = array.indexOf(pickedLetter.innerText.toLowerCase());
+
+console.log(array);
+  let indexOf = array.indexOf(slovo);
   // da li je pogodio ovo slovo?
   if (count < 5 && indexOf !== -1) {
     // pogodio je
     while (indexOf !== -1) {
       arrayCorect.push(indexOf);
       indexOf = array.indexOf(
-        pickedLetter.innerText.toLowerCase(),
+        slovo.toLowerCase(),
         indexOf + 1
       );
       arrayCorect.forEach((index) => {
@@ -141,7 +185,14 @@ function checkLetter() {
         winFlag = 1;
         newGame();
       }
+
     }
+
+    var deoTelaID = 6 - remainingAttempts;
+    let ID1 = "#element"+deoTelaID; 
+    document.querySelector(ID1).style.display = "flex";
+    console.log(nizKliknutihSlova);
+
   }
 }
 }
@@ -177,6 +228,14 @@ function newGame() {
 }
 
 function reset() {
+
+  for (let i = 1; i<7; i++  ) {
+    var ID = "#element"+i; 
+    //var elementX =  document.querySelector();
+    console.log(ID);
+    document.querySelector(ID).style.display = "none";}
+   
+  
   winFlag = 0;
   randomOption = "";
   count = 0;
